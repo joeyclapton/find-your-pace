@@ -25,19 +25,13 @@ export class AppComponent {
   kilometers = 0;
   pace = 0;
   paceByKilometer = 0;
-  options: Array<MetricOptions> = [
-    {
-      description: 'Kilometers + Minutes = Pace',
-    },
-    {
-      description: 'Kilometers + Minutes = Pace',
-    },
-    {
-      description: 'Kilometers + Minutes = Pace',
-    },
-  ];
+  options: Array<MetricOptions> = [];
 
   runningService = inject(RunningService);
+
+  constructor() {
+    this.options = this.runningService.getAllMetrics();
+  }
 
   getMetrics(metrics: Race, type: string) {
     if (this.selectedMetric === 'kilometers') {
