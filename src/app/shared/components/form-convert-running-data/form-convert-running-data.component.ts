@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { RunningService } from '../../services/running/running.service';
+import { Race } from '../../interfaces/race.interface';
 
 @Component({
   selector: 'app-form-convert-running-data',
@@ -11,11 +13,9 @@ import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 export class FormConvertRunningDataComponent {
   form: FormGroup;
   formBuild = inject(FormBuilder);
+  runningService = inject(RunningService);
 
-  @Output() valuesChanged: EventEmitter<{
-    firstParameter: number;
-    secondParameter: number;
-  }> = new EventEmitter();
+  @Output() valuesChanged: EventEmitter<Race> = new EventEmitter();
 
   constructor() {
     this.form = this.formBuild.group({
@@ -24,12 +24,11 @@ export class FormConvertRunningDataComponent {
     });
 
     this.form.valueChanges.subscribe(() => {
-      this.#emitValues();
+      this.emitValues();
     });
   }
 
-  #emitValues() {
+  emitValues() {
     this.valuesChanged.emit(this.form.value);
-    console.log(this.form.value);
   }
 }
