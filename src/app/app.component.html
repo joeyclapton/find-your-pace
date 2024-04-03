@@ -3,20 +3,18 @@
   alt="Runners"
 />
 
+<app-metric-options
+  metric="kilometers"
+  (changeMetric)="getSelectedMetric($event)"
+/>
+<app-metric-options metric="pace" (changeMetric)="getSelectedMetric($event)" />
+<app-metric-options
+  metric="distance"
+  (changeMetric)="getSelectedMetric($event)"
+/>
+
 <app-form-convert-running-data
   firstMetric="Minutes"
   secondMetric="Kilometers"
   (valuesChanged)="getMetrics($event, 'k')"
-/>
-
-<app-form-convert-running-data
-  firstMetric="Minutes"
-  secondMetric="Pace"
-  (valuesChanged)="getMetrics($event, 'p')"
-/>
-
-<app-form-convert-running-data
-  firstMetric="Distance"
-  secondMetric="Pace"
-  (valuesChanged)="getMetrics($event, 'pk')"
 />
