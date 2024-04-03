@@ -3,4 +3,20 @@
   alt="Runners"
 />
 
-<app-form-convert-running-data firstMetric="Pace" secondMetric="Kilometers" />
+<app-form-convert-running-data
+  firstMetric="Minutes"
+  secondMetric="Kilometers"
+  (valuesChanged)="getMetrics($event, 'k')"
+/>
+
+<app-form-convert-running-data
+  firstMetric="Minutes"
+  secondMetric="Pace"
+  (valuesChanged)="getMetrics($event, 'p')"
+/>
+
+<app-form-convert-running-data
+  firstMetric="Distance"
+  secondMetric="Pace"
+  (valuesChanged)="getMetrics($event, 'pk')"
+/>

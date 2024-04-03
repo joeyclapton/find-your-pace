@@ -15,15 +15,15 @@ export class RunningService {
   }
 
   paceAndMinutesToKilometers({
-    firstParameter: pace,
-    secondParameter: minutes,
+    firstParameter: minutes,
+    secondParameter: pace,
   }: Race): number {
     return minutes / pace;
   }
 
   findPaceByKilometer({
-    firstParameter: pace,
-    secondParameter: distance,
+    firstParameter: distance,
+    secondParameter: pace,
   }: Race) {
     return pace * distance;
   }

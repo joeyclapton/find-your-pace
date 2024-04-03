@@ -25,10 +25,6 @@ export class FormConvertRunningDataComponent {
       firstParameter: [null],
       secondParameter: [null],
     });
-
-    this.form.valueChanges.subscribe(() => {
-      this.emitValues();
-    });
   }
 
   emitValues() {
