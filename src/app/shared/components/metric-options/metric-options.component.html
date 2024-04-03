@@ -1,4 +1,9 @@
-<section class="metric content-center" (click)="onChangeMetric()">
+<section
+  class="metric content-center"
+  (click)="onChangeMetric(idx)"
+  [ngClass]="{ 'metric--selected': selectedIdx === idx }"
+  *ngFor="let option of options; let idx = index"
+>
   <img src="" alt="" />
   <p>Kilometers + Minutes = Pace</p>
 </section>

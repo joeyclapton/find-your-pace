@@ -1,7 +1,15 @@
 .metric
   box-sizing: border-box
-  border: 2px solid #00000012
+  border: 2px solid var(--secondary-color)
   border-radius: var(--border-radius-sm)
   cursor: pointer
   padding: var(--spacing-md)
   margin: var(--spacing-md)
+  transition: all 0.2s
+
+  &--selected
+    background-color: var(--secondary-color-less)
+    border-color: var(--primary-color)
+
+  &:hover
+    border: 2px solid var(--primary-color)

@@ -6,6 +6,7 @@
 <app-metric-options
   metric="kilometers"
   (changeMetric)="getSelectedMetric($event)"
+  [options]="options"
 />
 <app-metric-options metric="pace" (changeMetric)="getSelectedMetric($event)" />
 <app-metric-options

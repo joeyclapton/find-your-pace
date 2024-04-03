@@ -5,6 +5,7 @@ import { FormConvertRunningDataComponent } from './shared/components/form-conver
 import { Race } from './shared/interfaces/race.interface';
 import { RunningService } from './shared/services/running/running.service';
 import { MetricOptionsComponent } from './shared/components/metric-options/metric-options.component';
+import { MetricOptions } from './shared/interfaces/metricOptions.interface';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,17 @@ export class AppComponent {
   kilometers = 0;
   pace = 0;
   paceByKilometer = 0;
+  options: Array<MetricOptions> = [
+    {
+      description: 'Kilometers + Minutes = Pace',
+    },
+    {
+      description: 'Kilometers + Minutes = Pace',
+    },
+    {
+      description: 'Kilometers + Minutes = Pace',
+    },
+  ];
 
   runningService = inject(RunningService);
 
