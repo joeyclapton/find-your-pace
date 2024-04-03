@@ -4,7 +4,6 @@
 />
 
 <app-metric-options
-  metric="kilometers"
   (changeMetric)="getSelectedMetric($event)"
   [options]="options"
 />
@@ -15,7 +14,8 @@
 />
 
 <app-form-convert-running-data
-  firstMetric="Minutes"
-  secondMetric="Kilometers"
+  *ngIf="selectedMetric"
+  [firstMetric]="selectedMetric.firstMetric"
+  [secondMetric]="selectedMetric.secondMetric"
   (valuesChanged)="getMetrics($event, 'k')"
 />

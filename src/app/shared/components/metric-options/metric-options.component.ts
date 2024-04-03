@@ -10,7 +10,6 @@ import { MetricOptions } from '../../interfaces/metricOptions.interface';
   styleUrl: './metric-options.component.sass',
 })
 export class MetricOptionsComponent {
-  @Input() metric = '';
   @Input() options: Array<MetricOptions> = [];
   @Output() changeMetric = new EventEmitter();
 
@@ -23,7 +22,7 @@ export class MetricOptionsComponent {
   }
 
   onChangeMetric(idx: number) {
-    this.changeMetric.emit(this.metric);
+    this.changeMetric.emit(this.options[idx]);
     this.#setCurrentIndex(idx);
   }
 }

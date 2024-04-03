@@ -34,12 +34,18 @@ export class RunningService {
   getAllMetrics(): Array<MetricOptions> {
     return [
       {
+        firstMetric: 'Minutes',
+        secondMetric: 'Kilometers',
         description: '🏃🏻‍♂️ Kilometers + Minutes = Pace',
       },
       {
+        firstMetric: 'Minutes',
+        secondMetric: 'Pace',
         description: '🏃‍♀️ Pace + Minutes = Kilometers',
       },
       {
+        firstMetric: 'Distance',
+        secondMetric: 'Pace',
         description: '🏃 Minutes + Pace = Distance',
       },
     ];
