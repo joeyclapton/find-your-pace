@@ -1,5 +1,21 @@
 <form [formGroup]="form">
-  <input type="number" formControlName="firstParameter" />
-  <input type="number" formControlName="secondParameter" />
-  <button (click)="emitValues()">Encontre meu Pace</button>
+  <div>
+    <label [for]="firstMetric">{{ firstMetric }}</label>
+    <input
+      [id]="firstMetric"
+      type="number"
+      formControlName="firstParameter"
+      required
+    />
+  </div>
+  <div>
+    <label [for]="secondMetric">{{ secondMetric }}</label>
+    <input
+      [id]="secondMetric"
+      type="number"
+      formControlName="secondParameter"
+      required
+    />
+  </div>
+  <button (click)="emitValues()">Find my pace 🔎</button>
 </form>

@@ -15,6 +15,9 @@ export class FormConvertRunningDataComponent {
   formBuild = inject(FormBuilder);
   runningService = inject(RunningService);
 
+  @Input() firstMetric = '';
+  @Input() secondMetric = '';
+
   @Output() valuesChanged: EventEmitter<Race> = new EventEmitter();
 
   constructor() {
